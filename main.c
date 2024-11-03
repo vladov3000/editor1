@@ -38,13 +38,41 @@ typedef struct {
 
 static char* c_extensions[] = { ".c", ".h", ".cpp", NULL };
 static char* c_keywords[] = {
-  "switch", "if",      "while",   "for",    "break",     "continue", "return", "else",
-  "struct", "union",   "typedef", "static", "enum",      "class",    "case",   "int|",
-  "long|",  "double|", "float|",  "char|",  "unsigned|", "signed|",  "void|",  NULL,
+  "switch", "if",      "while",   "for",    "break", "continue",  "return",  "else",
+  "struct", "union",   "typedef", "static", "enum",  "class",     "case",    "extern",
+  "int|",   "long|",   "double|", "float|", "char|", "unsigned|", "signed|", "void|",
+  NULL,
+};
+
+static char* haskell_extensions[] = { ".hs", NULL };
+static char* haskell_keywords[] = {
+  "!",        "'",         "\"",      "-",       "->",        "::",       ";",       "<-",
+  ",",        "=",         "=>",      ">",       "?",         "#",        "*",       "@",
+  "\\",       "_",         "as|",     "case|",   "of|",       "class|",   "data|",   "family|",
+  "default|", "deriving|", "do|",     "forall|", "instance|", "foreign|", "hiding|", "if|",
+  "then|",    "else|",     "import|", "infix|",  "infixl|",   "infixr|",  "let|",    "in|",
+  "module|",  "newtype|",  "type|",   "where|",  NULL,
 };
 
 static Syntax syntaxes[] = {
-  { "c", c_extensions, c_keywords, "//", "/*", "*/", HIGHLIGHT_NUMBERS | HIGHLIGHT_STRINGS },
+  {
+    "c",
+    c_extensions,
+    c_keywords,
+    "//",
+    "/*",
+    "*/",
+    HIGHLIGHT_NUMBERS | HIGHLIGHT_STRINGS
+  },
+  {
+    "haskell",
+    haskell_extensions,
+    haskell_keywords,
+    "--",
+    "{-",
+    "-}",
+    HIGHLIGHT_NUMBERS | HIGHLIGHT_STRINGS
+  },
 };
 
 static struct termios original;
