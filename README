@@ -1,0 +1,23 @@
+Editor1
+=======
+
+My first text editor. It has a lot of deficiencies, but
+works on some level. Hopefully, editor2 will be better.
+
+To compile it, run:
+$ cc main.c -o editor1
+
+Then, you can open a temporary buffer with:
+$ editor1
+
+or edit a file with:
+$ editor /path/to/my/file
+
+Navigate the editor with error keys.
+
+Quit with Ctrl-Q.
+Save to a file with Ctrl-S.
+Press Ctrl-F to search, and the arrow keys to navigate between results.
+
+Based off of kilo:
+https://viewsourcecode.org/snaptoken/kilo/
