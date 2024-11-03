@@ -11,7 +11,7 @@ Then, you can open a temporary buffer with:
 $ editor1
 
 or edit a file with:
-$ editor /path/to/my/file
+$ editor1 /path/to/my/file
 
 Navigate the editor with error keys.
 
